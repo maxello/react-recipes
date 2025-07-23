@@ -14,7 +14,6 @@ const Filter = () => {
   const value = c || a || i || '';
 
   const { data: meals } = useFilter(value, activeParam as FilterParam);
-  console.log("meals", meals);
 
   if (!meals || !meals.length) {
     return <p className="text-center">No meals found</p>

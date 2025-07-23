@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Navbar,
   NavbarBrand,
@@ -9,14 +9,22 @@ import {
   NavbarMenuItem,
   Link as HeroLink
 } from "@heroui/react";
-import { NavLink } from "react-router"
+import { NavLink } from "react-router";
 import { cn } from "../lib/utils";
 import { ThemeSwitcher } from "./ThemeSwither";
 import { Soup } from 'lucide-react';
 import SearchForm from "./SearchForm";
+import { useLocation } from 'react-router';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      setIsMenuOpen(false);
+    }
+  }, [location]);
 
   const menuItems = [
     {
@@ -34,7 +42,7 @@ export default function Header() {
   ];
 
   return (
-    <Navbar onMenuOpenChange={setIsMenuOpen} className="border-b bg-content1/80">
+    <Navbar onMenuOpenChange={setIsMenuOpen} isMenuOpen={isMenuOpen} className="border-b bg-content1/80">
       <NavbarContent className="!grow-0">
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
