@@ -6,11 +6,12 @@ import {
   TableRow,
   TableCell,
   getKeyValue,
+  Link,
 } from "@heroui/react";
 import type { IngredientTableCols, IngredientTableRows } from "../types";
 
 export default function IngredientTable({
-  rows, 
+  rows,
   cols
 }: {
   rows: IngredientTableRows[],
@@ -24,7 +25,17 @@ export default function IngredientTable({
       <TableBody items={rows} emptyContent={"No rows to display."}>
         {(item) => (
           <TableRow key={item.key}>
-            {(columnKey) => <TableCell>{getKeyValue(item, columnKey)}</TableCell>}
+            {(columnKey) => (
+              <TableCell>
+                {columnKey === 'ingredient' ? (
+                  <Link href={`/filter/?i=${item.ingredient}`} className="underline">{getKeyValue(item, columnKey)}</Link>
+                ) : (
+                  <>
+                    {getKeyValue(item, columnKey)}
+                  </>
+                )}
+              </TableCell>
+            )}
           </TableRow>
         )}
       </TableBody>

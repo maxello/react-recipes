@@ -9,6 +9,7 @@ import MealPage from '../pages/MealPage.tsx';
 import CategoryPage from '../pages/CategoryPage.tsx';
 import CategoriesPage from '../pages/CategoriesPage.tsx';
 import SearchPage from '../pages/SearchPage.tsx';
+import FilterPage from '../pages/FilterPage.tsx';
 
 const RouterWrapper = ({ children }: { children: ReactNode }) => {
   const location = useLocation();
@@ -28,10 +29,12 @@ const AnimatedRoutes = () => {
       <Route element={<App />}>
         <Route index path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/meal" element={<NotFoundPage />} />
         <Route path="/meal/:id" element={<MealPage />} />
         <Route path="/categories" element={<CategoriesPage />} />
         <Route path="/categories/:id" element={<CategoryPage />} />
         <Route path="/search" element={<SearchPage />} />
+        <Route path="/filter" element={<FilterPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
       </Routes>

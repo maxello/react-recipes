@@ -15,7 +15,7 @@ export default function ProductCard({
 }) {
   return (
     <Link href={`${path}`} className="block h-full">
-      <Card className="border shadow-none rounded-md h-full justify-between">
+      <Card isHoverable className="border shadow-none rounded-md h-full justify-between">
         <CardBody className={cn(align && `justify-${align}`, "p-0 aspect-square relative overflow-hidden flex flex-initial flex-col items-center")}>
           <Image
             removeWrapper

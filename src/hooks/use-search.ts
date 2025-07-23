@@ -2,7 +2,7 @@ import { useSuspenseQuery } from "@tanstack/react-query";
 import type { MealResponse } from "../types";
 
 const fetchMeals = async (query: string): Promise<MealResponse> => {
-  await new Promise(resolve => setTimeout(resolve, 2000));
+  // await new Promise(resolve => setTimeout(resolve, 2000));
   const res = await fetch(`${import.meta.env.VITE_PRODUCT_API_URL}/search.php?s=${query}`);
   if (!res.ok) throw new Error('Failed to fetch categories');
   return res.json();

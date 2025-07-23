@@ -1,4 +1,4 @@
-import {Tabs, Tab, Card, CardBody} from "@heroui/react";
+import {Tabs, Tab, Card, CardBody, Link} from "@heroui/react";
 import { getIngredients } from '../lib/utils';
 import IngredientTable from './IngredientTable';
 import type { IngredientTableCols, IngredientTableRows, Meal } from '../types';
@@ -46,11 +46,11 @@ const MealTabs = ({
             <CardBody className="gap-4 p-6">
               <div>
                 <h4 className="text-secondary">Category:</h4>
-                <p>{data.strCategory}</p>
+                <Link href={`/filter/?c=${data.strCategory}`} className="underline">{data.strCategory}</Link>
               </div>
               <div>
                 <h4 className="text-secondary">Area:</h4>
-                <p>{data.strArea}</p>
+                <Link href={`/filter/?a=${data.strArea}`} className="underline">{data.strArea}</Link>
               </div>
               <div>
                 <h4 className="text-secondary">Video:</h4>

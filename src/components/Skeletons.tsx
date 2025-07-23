@@ -17,3 +17,23 @@ export const CategoriesSkeleton = () => {
   )
 }
 
+export const MealDetailsSkeleton = () => {
+  return (
+    <div>
+      <Skeleton className="max-w-[90%] md:max-w-[300px] h-9 rounded-md mb-6 md:mb-8" />
+      <div className="grid md:grid-cols-2 gap-10 md:gap-6">
+        <div className="flex flex-col gap-3">
+          <Skeleton className="aspect-square rounded-md" />
+          <div className="flex gap-2 flex-nowrap">
+            {Array(2).fill('').map((_, ind) => (<Skeleton key={ind} className="w-18 h-7 rounded-md mb-6 md:mb-8" />))}
+          </div>
+        </div>
+        <div className="flex flex-col">
+          <Skeleton className="h-10 rounded-md mb-3" />
+          <Skeleton className="h-30 rounded-md mb-6 md:mb-8" />
+        </div>
+      </div>
+    </div>
+  )
+}
+

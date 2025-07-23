@@ -34,7 +34,7 @@ export default function Header() {
   ];
 
   return (
-    <Navbar onMenuOpenChange={setIsMenuOpen} className="border-b bg-content1">
+    <Navbar onMenuOpenChange={setIsMenuOpen} className="border-b bg-content1/80">
       <NavbarContent className="!grow-0">
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}

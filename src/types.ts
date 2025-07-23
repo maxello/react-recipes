@@ -50,3 +50,5 @@ type CMeal = {
 export type CategoryResponse = {
   meals: CMeal[]
 }
+
+export type FilterParam = 'c' | 'i' | 'a';

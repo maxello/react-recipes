@@ -26,6 +26,7 @@ const MealDetails = ({
           <div className="flex gap-2 flex-nowrap">
             {tags.map((tag) => (
               <Button
+                key={tag}
                 as={Link}
                 color="secondary"
                 href={`/search/?q=${tag}`}
@@ -39,9 +40,7 @@ const MealDetails = ({
           </div>
         )}
       </div>
-      <>
-        <MealTabs data={data} />
-      </>
+      <MealTabs data={data} />
     </div>
   )
 }
