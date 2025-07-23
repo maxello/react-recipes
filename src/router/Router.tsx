@@ -8,6 +8,7 @@ import NotFoundPage from '../pages/NotFoundPage.tsx';
 import MealPage from '../pages/MealPage.tsx';
 import CategoryPage from '../pages/CategoryPage.tsx';
 import CategoriesPage from '../pages/CategoriesPage.tsx';
+import SearchPage from '../pages/SearchPage.tsx';
 
 const RouterWrapper = ({ children }: { children: ReactNode }) => {
   const location = useLocation();
@@ -30,7 +31,7 @@ const AnimatedRoutes = () => {
         <Route path="/meal/:id" element={<MealPage />} />
         <Route path="/categories" element={<CategoriesPage />} />
         <Route path="/categories/:id" element={<CategoryPage />} />
-        {/* <Route path="/categories/:id/:mealId" element={<MealPage />} /> */}
+        <Route path="/search" element={<SearchPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
       </Routes>

@@ -18,6 +18,7 @@
   --content2: #ffe9cc;
   --content3: #ffe0b8;
   --content4: #ffd7a3;
+  --default: #b4afa8;
 }
 
 .dark {
@@ -33,6 +34,7 @@
   --content2: #3e2b3c;
   --content3: #50374d;
   --content4: #62435f;
+  --default: #413841;
 }
 
 @theme inline {
@@ -45,6 +47,7 @@
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-content1: var(--content1);
+  --color-default: var(--default);
 }
 
 body {

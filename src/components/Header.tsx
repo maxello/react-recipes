@@ -13,6 +13,7 @@ import { NavLink } from "react-router"
 import { cn } from "../lib/utils";
 import { ThemeSwitcher } from "./ThemeSwither";
 import { Soup } from 'lucide-react';
+import SearchForm from "./SearchForm";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -40,9 +41,9 @@ export default function Header() {
           className="sm:hidden"
         />
         <NavLink to="/">
-          <NavbarBrand className="flex items-end gap-2">
-            <Soup size={36}/>
-            <p className="font-bold text-inherit text-xl leading-[1] mb-1">Recipes</p>
+          <NavbarBrand className="flex items-center gap-2">
+            <Soup className="w-7 h-7 md:w-8.5 md:h-8.5 mb-1" />
+            <p className="hidden md:block font-bold text-inherit text-base md:text-xl leading-[1]">Recipes</p>
           </NavbarBrand>
         </NavLink>
       </NavbarContent>
@@ -60,7 +61,11 @@ export default function Header() {
           </NavbarItem>
         ))}
       </NavbarContent>
-      <ThemeSwitcher />
+      <div className="flex gap-4 items-center">
+        <SearchForm />
+        <ThemeSwitcher />
+      </div>
+      
       <NavbarMenu>
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>

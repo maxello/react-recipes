@@ -9,6 +9,10 @@ const Category = ({
 
   const { data: meals } = useCategory(name);
   
+  if (!meals) {
+    return (<div className="text-center text-lg">Such category does not exist.</div>)
+  } 
+
   return (
     <div className="gap-3 grid grid-cols-2 md:grid-cols-4 items-stretch h-full">
       {meals.map((meal) => (

@@ -1,7 +1,6 @@
 import { useLocation } from 'react-router'
 import { Breadcrumbs as BC, BreadcrumbItem as BCI } from "@heroui/react";
 import { capitalizeFirstLetter, parseSegment } from '../lib/utils';
-// import { useMeal } from '../hooks/use-meal';
 
 export default function Breadcrumbs() {
   const location = useLocation();

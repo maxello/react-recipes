@@ -1,14 +1,5 @@
 import { useSuspenseQuery } from "@tanstack/react-query";
-
-type Meal = {
-  idMeal: string,
-  strMealThumb: string,
-  strMeal: string,
-}
-
-type CategoryResponse = {
-  meals: Meal[]
-}
+import type { CategoryResponse } from "../types";
 
 const fetchCategories = async (category: string): Promise<CategoryResponse> => {
   await new Promise(resolve => setTimeout(resolve, 2000));
