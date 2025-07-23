@@ -6,6 +6,10 @@ export default function Breadcrumbs() {
   const location = useLocation();
   const pathnames = location.pathname.split('/').filter(Boolean);
 
+  if (pathnames[0] === 'react-recipes') {
+    pathnames.shift();
+  }
+
   if (location.pathname === '/') {
     return null;
   }
