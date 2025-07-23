@@ -13,16 +13,20 @@ const Search = () => {
   }
 
   return (
-    <div className="gap-3 grid grid-cols-2 md:grid-cols-4">
-      {meals.map((meal) => (
-        <ProductCard 
-          key={meal.idMeal} 
-          title={meal.strMeal}
-          src={meal.strMealThumb}
-          path={`/meal/${meal.idMeal}-${meal.strMeal}`}
-        />
-      ))}
-    </div>
+    <>
+      <h2 className="text-2xl mb-6 font-semibold">Search by Meal: <span className="text-primary">{query}</span></h2>
+      <div className="gap-3 grid grid-cols-2 md:grid-cols-4">
+        {meals.map((meal) => (
+          <ProductCard 
+            key={meal.idMeal} 
+            title={meal.strMeal}
+            src={meal.strMealThumb}
+            path={`/meal/${meal.idMeal}-${meal.strMeal}`}
+          />
+        ))}
+      </div>
+    </>
+    
   )
 }
 

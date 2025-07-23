@@ -10,8 +10,9 @@ const Filter = () => {
   const i = params.get('i');
 
   const activeParam = c ? 'c' : a ? 'a' : i ? 'i' : null;
+  const categoryName = c ? 'Category' : a ? 'Area' : i ? 'Ingredient' : null;
   const value = c || a || i || '';
-  
+
   const { data: meals } = useFilter(value, activeParam as FilterParam);
   console.log("meals", meals);
 
@@ -20,16 +21,21 @@ const Filter = () => {
   }
 
   return (
-    <div className="gap-3 grid grid-cols-2 md:grid-cols-4">
-      {meals.map((meal) => (
-        <ProductCard 
-          key={meal.idMeal} 
-          title={meal.strMeal}
-          src={meal.strMealThumb}
-          path={`/meal/${meal.idMeal}-${meal.strMeal}`}
-        />
-      ))}
-    </div>
+    <>
+      {categoryName && (
+        <h2 className="text-2xl mb-6 font-semibold">Filter by {categoryName}: <span className="text-primary">{value}</span></h2>
+      )}
+      <div className="gap-3 grid grid-cols-2 md:grid-cols-4">
+        {meals.map((meal) => (
+          <ProductCard
+            key={meal.idMeal}
+            title={meal.strMeal}
+            src={meal.strMealThumb}
+            path={`/meal/${meal.idMeal}-${meal.strMeal}`}
+          />
+        ))}
+      </div>
+    </>
   )
 }
 

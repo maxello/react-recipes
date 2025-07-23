@@ -66,11 +66,11 @@ export default function Header() {
         <ThemeSwitcher />
       </div>
       
-      <NavbarMenu>
+      <NavbarMenu className="items-center gap-4 justify-center">
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
             <HeroLink
-              className="w-full"
+              className="w-full text-2xl uppercase p-5"
               href={item.link}
               size="lg"
             >
