@@ -35,8 +35,8 @@ const AnimatedRoutes = () => {
         <Route path="/categories/:id" element={<CategoryPage />} />
         <Route path="/search" element={<SearchPage />} />
         <Route path="/filter" element={<FilterPage />} />
-        <Route path="*" element={<NotFoundPage />} />
       </Route>
+      <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </RouterWrapper>
   )
