@@ -2,7 +2,7 @@ import { Link } from "@heroui/react";
 
 const NotFoundPage = () => {
   return (
-    <main className="grid min-h-full place-items-center px-6 py-24 sm:py-32 lg:px-8">
+    <main className="grid place-items-center px-6 py-24 sm:py-32 lg:px-8 min-h-dvh">
       <div className="text-center">
         <p className="text-base font-semibold text-secondary">404</p>
         <h1 className="mt-4 text-5xl font-semibold tracking-tight text-balance sm:text-7xl">Page not found</h1>
